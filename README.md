@@ -4,6 +4,10 @@ This repo contains the code for the ESP8266 microcontroller to be used as both a
 ## Hardware and Software Used
 - ESP8266
 - 4 9g Servos
+- 1 2200kv motor
+- 20A motor ESC
+- Plane Frame
+- 3 AA battery pack
 - Arduino IDE
 - Blynk app
 
