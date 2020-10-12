@@ -29,18 +29,17 @@ This repo contains the code for the ESP8266 microcontroller to be used as both a
 #### App Setup
 8. In the Blynk app, make a new device by clicking on the nut icon in the top right and clicking on the devices tab. Add a new device, name it whatever you prefer, select the corresponding board `nodeMCU`, and choose the connection type to be wifi.
 
-9. Go back to the main screen with light dots everywhere and swipe left. Under the controllers menu:
- -Select joystick and place it on the very top left of the screen
-    - Click on it and under the output section, select the green box to the left with `[0]` on its left and on the left column select `virtual` and on the right select `V1` then press ok. Select the box immediately to the right of the green box and type in `0` and the other to the very right of the screen `180`. Repeat this exact process to the 3 boxes below  but select `Virtual` --> `V2` instead of `Virtual` --> `V1`. Once you have finished you can press ok on the very top right.
+9. Select joystick and place it on the very top left of the screen
+- Click on it and under the output section, select the green box to the left with `[0]` on its left and on the left column select `virtual` and on the right select `V1` then press ok. Select the box immediately to the right of the green box and type in `0` and the other to the very right of the screen `180`. Repeat this exact process to the 3 boxes below  but select `Virtual` --> `V2` instead of `Virtual` --> `V1`. Once you have finished you can press ok on the very top right.
     
- -Select another joystick and place it on the very bottom left.
-    - Repeat the same steps you took for the top left joystick for this except make the green box with `[0]` to the left of it `Virtual` --> `V3` and the blue box with `[1]` to the left of it `Virtual` --> `V4`.
+10. Select another joystick and place it on the very bottom left.
+- Repeat the same steps you took for the top left joystick for this except make the green box with `[0]` to the left of it `Virtual` --> `V3` and the blue box with `[1]` to the left of it `Virtual` --> `V4`.
     
- -Place two vertical sliders on the very top right parallel to eachother
-   - Click on the slider to the left and under the output section, select the green box to the left with `[0]` on its left and on the left column select `virtual` and on the right select `V5` then press ok. Select the box immediately to the right of the green box and type in `0` and the other to the very right of the screen `10`. Repeat the same process with the slider in the very top right corner and select `V6` instead. Once you have finished you can press ok on the very top right.
+11. Place two vertical sliders on the very top right parallel to eachother
+- Click on the slider to the left and under the output section, select the green box to the left with `[0]` on its left and on the left column select `virtual` and on the right select `V5` then press ok. Select the box immediately to the right of the green box and type in `0` and the other to the very right of the screen `10`. Repeat the same process with the slider in the very top right corner and select `V6` instead. Once you have finished you can press ok on the very top right.
    
- -Place another two vertical sliders parallel to eachother on the very bottom right
-  - Repeat the same steps as for the previous sliders but select `V7` and `V8` instead in the same order so that the `V8` slider is on the very bottom right. 
+12. Place another two vertical sliders parallel to eachother on the very bottom right
+- Repeat the same steps as for the previous sliders but select `V7` and `V8` instead in the same order so that the `V8` slider is on the very bottom right. 
   
 10. When the board is connected to your hotspot you can go back to this app and press the play button on the top right to start the controls.
 
