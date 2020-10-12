@@ -1,4 +1,4 @@
-# College of Dupage Plane Dogfight
+# ESP8266 Plane Controller Using BLYNK
 This repo contains the code for the ESP8266 microcontroller to be used as both a computer and reciever for the plane dogfight competition at the College of dupage. This code is made to work with the blynk app through a personal hotspot or Wifi of ones choosing. Extendability was kept in mind for the code so that participants can edit it to accomodate their plane design and control.
 
 ## Hardware and Software Used
