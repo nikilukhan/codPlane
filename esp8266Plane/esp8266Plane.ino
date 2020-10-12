@@ -3,16 +3,26 @@
 #include <BlynkSimpleEsp8266.h>
 #include <Servo.h>
 
-char auth[] = "customAuthenticator";
+//Found in BLYNK --> Gear on top right --> Under auth token is
+//the list of letters and numbers you replace "auth token" with
+char auth[] = "customAuthenticator"; 
 
-char ssid[] = "ssid";
-char pass[] = "password";
+//Phone name
+char ssid[] = "phoneName";
+
+//Hotspot Password
+char pass[] = "hotspotPassword";
 
 Servo motor;
 Servo servoRudder;
 Servo servoAileronL;
 Servo servoAileronR;
 Servo servoElevator;
+
+float speedMultiplier;
+float rudderTrim;
+float aileronTrim;
+float elevatorTrim;
 
 void setup()
 {
@@ -24,6 +34,12 @@ void setup()
   servoAileronL.attach(12); //nodeMCU port D6
   servoAileronR.attach(13); //nodeMCU port D7
   servoElevator.attach(15); //nodeMCU port D8
+
+  Blynk.virtualWrite(V1, 75);
+  Blynk.virtualWrite(V5, 0);
+  Blynk.virtualWrite(V6, 5);
+  Blynk.virtualWrite(V7, 5);
+  Blynk.virtualWrite(V8, 5);
 }
 
 void loop()
@@ -32,30 +48,30 @@ void loop()
 }
 
 BLYNK_WRITE(V1) {
-  servoRudder.write(param[0].asInt()); 
-}
-BLYNK_WRITE(V2) {
-  int motorSpeed = 2*(param[1].asInt()) -90;
+  int motorSpeed = 2 * (param.asInt() - 90);
   motor.write(motorSpeed); 
 }
-BLYNK_WRITE(V3) {
-  int controlL = param[0].asInt();
-  int controlR = -(param[0].asInt());
+BLYNK_WRITE(V2) {
+  servoRudder.write(param.asInt()+rudderTrim); 
+}
+BLYNK_WRITE(V4) {
+  int controlL = param.asInt()+aileronTrim;
+  int controlR = -(param.asInt()+aileronTrim) + 180;
   servoAileronL.write(controlL);
   servoAileronR.write(controlR); 
 }
-BLYNK_WRITE(V4) {
-  servoElevator.write(param[0].asInt()); 
+BLYNK_WRITE(V3) {
+  servoElevator.write(param.asInt()+elevatorTrim); 
 }
 BLYNK_WRITE(V5) {
-  int speedMultiplier = param.asInt()/2 +5; 
+  speedMultiplier = 5 * param.asInt()+1;
 }
 BLYNK_WRITE(V6) {
-  int rudderTrim = param.asInt()/2 +5; 
+  rudderTrim = 4*param.asInt()-20; 
 }
 BLYNK_WRITE(V7) {
-  int aileronTrim = param.asInt()/2 +5; 
+  aileronTrim = 4*param.asInt()-20; 
 }
 BLYNK_WRITE(V8) {
-  int elevatorTrim = param.asInt()/2 +5; 
+  elevatorTrim = 4*param.asInt()-20; 
 }
