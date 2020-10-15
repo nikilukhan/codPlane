@@ -44,7 +44,9 @@ This repo contains the code for the ESP8266 microcontroller to be used as both a
    
 12. Place another two vertical sliders parallel to eachother on the very bottom right
 - Repeat the same steps as for the previous sliders but select `V7` and `V8` instead in the same order so that the `V8` slider is on the very bottom right. 
-  
+
+<img src="esp8266Photos/Controls.jpg" height="350">
+
 10. When the board is connected to your hotspot you can go back to this app and press the play button on the top right to start the controls.
 
 #### Code Setup
