@@ -26,6 +26,10 @@ float elevatorTrim;
 
 void setup()
 {
+  motor.write(90);
+  delay(10000);
+  motor.write(0);
+  
   Serial.begin(9600);
   Blynk.begin(auth, ssid, pass);
 
@@ -35,7 +39,7 @@ void setup()
   servoAileronR.attach(13); //nodeMCU port D7
   servoElevator.attach(15); //nodeMCU port D8
 
-  Blynk.virtualWrite(V1, 75);
+  Blynk.virtualWrite(V1, 90);
   Blynk.virtualWrite(V5, 0);
   Blynk.virtualWrite(V6, 5);
   Blynk.virtualWrite(V7, 5);
@@ -48,8 +52,8 @@ void loop()
 }
 
 BLYNK_WRITE(V1) {
-  int motorSpeed = 2 * (param.asInt() - 90);
-  motor.write(motorSpeed); 
+  int motorSpeed = param.asInt();
+  motor.write(map(motorSpeed,0,180,0,120)); 
 }
 BLYNK_WRITE(V2) {
   servoRudder.write(param.asInt()+rudderTrim); 
