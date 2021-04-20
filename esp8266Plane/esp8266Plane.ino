@@ -52,17 +52,14 @@ void loop()
 }
 
 BLYNK_WRITE(V1) {
-  int motorSpeed = param.asInt();
-  motor.write(map(motorSpeed,0,180,0,120)); 
+  motor.write(map(param.asInt(),0,180,0,120)); 
 }
 BLYNK_WRITE(V2) {
   servoRudder.write(param.asInt()+rudderTrim); 
 }
 BLYNK_WRITE(V4) {
-  int controlL = param.asInt()+aileronTrim;
-  int controlR = -(param.asInt()+aileronTrim) + 180;
-  servoAileronL.write(controlL);
-  servoAileronR.write(controlR); 
+  servoAileronL.write(param.asInt()+aileronTrim);
+  servoAileronR.write(-(param.asInt()+aileronTrim) + 180); 
 }
 BLYNK_WRITE(V3) {
   servoElevator.write(param.asInt()+elevatorTrim); 
